@@ -30,23 +30,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/monday_outside">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/monday">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Monday"
                     android:textStyle="bold"
                     android:textSize="20dp"
-                    />
+                    android:id="@+id/monday"/>
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_schedule"/>
-        </LinearLayout>
+                    android:src="@drawable/ic_schedule"
+                    android:layout_below="@id/monday"
+                    android:id="@+id/monday_img"/>
             <TextView
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
@@ -54,7 +50,7 @@
                 android:paddingTop="10dp"
                 android:id="@+id/monday_spacer"/>
                 <TextView
-                    android:layout_toRightOf="@+id/monday"
+                    android:layout_toRightOf="@id/monday_img"
                     android:layout_below="@id/monday_spacer"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
@@ -62,14 +58,14 @@
                     android:background="@drawable/box_back"
                     android:text="8:30am   SUNY Oswego to Downtown\n10:30am  Downtown to SUNY Oswego"
                     />
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/monday_spacer"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    android:src="@drawable/ic_edit"
-                    android:onClick="doSomeStuff"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/monday_spacer"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_edit"
+                android:id="@+id/monday_edit"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -77,23 +73,19 @@
             android:layout_height="wrap_content"
             android:id="@+id/tuesday_outside"
             android:layout_below="@id/monday_outside">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/tuesday">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tuesday"
                     android:textStyle="bold"
                     android:textSize="20dp"
-                    />
+                    android:id="@+id/tuesday"/>
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_schedule"/>
-            </LinearLayout>
+                    android:src="@drawable/ic_schedule"
+                    android:layout_below="@id/tuesday"
+                    android:id="@+id/tuesday_img"/>
             <TextView
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
@@ -104,21 +96,247 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/tuesday_schedule"
-                    android:layout_toRightOf="@+id/tuesday"
+                    android:layout_toRightOf="@+id/tuesday_img"
                     android:layout_below="@id/tuesday_spacer"
                     android:background="@drawable/box_back"
                     android:text="8:30am   SUNY Oswego to Downtown\n10:30am  Downtown to SUNY Oswego"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/tuesday_spacer"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/ic_edit"
-                android:onClick="doSomeStuff"/>
+                android:id="@+id/tuesday_edit"/>
 
         </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/wednesday_outside"
+                android:layout_below="@id/tuesday_outside">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wednesday"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:id="@+id/wednesday"/>
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_schedule"
+                        android:layout_below="@id/wednesday"
+                        android:id="@+id/wednesday_img"/>
+
+                <TextView
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/wednesday"
+                    android:paddingTop="10dp"
+                    android:id="@+id/wednesday_spacer"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/wednesday_schedule"
+                    android:layout_toRightOf="@+id/wednesday_img"
+                    android:layout_below="@id/wednesday_spacer"
+                    android:background="@drawable/box_back"
+                    android:text="8:30am   SUNY Oswego to Downtown\n10:30am  Downtown to SUNY Oswego"/>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/wednesday_spacer"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_edit"
+                    android:id="@+id/wednesday_edit"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/thursday_outside"
+                android:layout_below="@id/wednesday_outside">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thursday"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:id="@+id/thursday"
+                        />
+                    <ImageView
+                        android:layout_below="@id/thursday"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_schedule"
+                        android:id="@+id/thursday_img"/>
+
+                <TextView
+                    android:layout_width="275dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/thursday_img"
+                    android:paddingTop="10dp"
+                    android:id="@+id/thursday_spacer"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/thursday_schedule"
+                    android:layout_toRightOf="@+id/thursday_img"
+                    android:layout_below="@id/thursday_spacer"
+                    android:background="@drawable/box_back"
+                    android:text="8:30am   SUNY Oswego to Downtown\n10:30am  Downtown to SUNY Oswego"/>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/thursday_spacer"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_edit"
+                    android:id="@+id/thursday_edit"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/friday_outside"
+                android:layout_below="@id/thursday_outside">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Friday"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:id="@+id/friday"
+                        />
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_schedule"
+                        android:layout_below="@id/friday"
+                        android:id="@+id/friday_img"/>
+                <TextView
+                    android:layout_width="275dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/friday_img"
+                    android:paddingTop="10dp"
+                    android:id="@+id/friday_spacer"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/friday_schedule"
+                    android:layout_toRightOf="@+id/friday"
+                    android:layout_below="@id/friday_spacer"
+                    android:background="@drawable/box_back"
+                    android:text="8:30am   SUNY Oswego to Downtown\n10:30am  Downtown to SUNY Oswego"/>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/friday_spacer"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_edit"
+                    android:id="@+id/friday_edit"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/saturday_outside"
+                android:layout_below="@id/friday_outside">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Saturday"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:id="@+id/saturday"/>
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_schedule"
+                        android:id="@+id/saturday_img"
+                        android:layout_below="@id/saturday"/>
+
+                <TextView
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/saturday"
+                    android:paddingTop="10dp"
+                    android:id="@+id/saturday_spacer"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/saturday_schedule"
+                    android:layout_toRightOf="@+id/saturday_img"
+                    android:layout_below="@id/saturday_spacer"
+                    android:background="@drawable/box_back"
+                    android:text="8:30am   SUNY Oswego to Downtown\n10:30am  Downtown to SUNY Oswego"/>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/saturday_spacer"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_edit"
+                    android:id="@+id/saturday_edit"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sunday_outside"
+                android:layout_below="@id/saturday_outside">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sunday"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:id="@+id/sunday"/>
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_schedule"
+                        android:layout_below="@id/sunday"
+                        android:id="@+id/sunday_img"/>
+
+                <TextView
+                    android:layout_width="255dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/sunday"
+                    android:paddingTop="10dp"
+                    android:id="@+id/sunday_spacer"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sunday_schedule"
+                    android:layout_toRightOf="@+id/sunday_img"
+                    android:layout_below="@id/sunday_spacer"
+                    android:background="@drawable/box_back"
+                    android:text="8:30am   SUNY Oswego to Downtown\n10:30am  Downtown to SUNY Oswego"/>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/sunday_spacer"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_edit"
+                    android:id="@+id/sunday_edit"/>
+
+            </RelativeLayout>
     </RelativeLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

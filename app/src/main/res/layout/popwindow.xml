@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!--    <ListView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/list_view"/>-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tuesday"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:id="@+id/topLabel"/>
+    <TextView
+        android:layout_below="@id/topLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/justSomeText"
+        android:text="Hello World!           "/>
+    <ImageButton
+        android:layout_below="@id/topLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_edit"
+        android:layout_toRightOf="@id/justSomeText"
+        android:id="@+id/justSomeText_edit"/>
+    <ImageButton
+        android:layout_below="@id/topLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/justSomeText_edit"
+        android:src="@drawable/ic_delete"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/justSomeText1"
+        android:text="Hello World!           "
+        android:layout_below="@id/justSomeText_edit"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_edit"
+        android:layout_toRightOf="@id/justSomeText1"
+        android:layout_below="@id/justSomeText_edit"
+        android:id="@+id/justSomeText1_edit"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/justSomeText_edit"
+        android:layout_below="@id/justSomeText_edit"
+        android:src="@drawable/ic_delete"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/justSomeText2"
+        android:layout_below="@id/justSomeText1_edit"
+        android:text="Hello World!           "/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_edit"
+        android:layout_toRightOf="@id/justSomeText"
+        android:layout_below="@id/justSomeText1_edit"
+        android:id="@+id/justSomeText2_edit"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/justSomeText_edit"
+        android:layout_below="@id/justSomeText1_edit"
+        android:src="@drawable/ic_delete"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/justSomeText3"
+        android:layout_below="@id/justSomeText2_edit"
+        android:text="Hello World!           "/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_edit"
+        android:layout_toRightOf="@id/justSomeText"
+        android:layout_below="@id/justSomeText2_edit"
+        android:id="@+id/justSomeText3_edit"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/justSomeText_edit"
+        android:layout_below="@id/justSomeText2_edit"
+        android:src="@drawable/ic_delete"/>
+</RelativeLayout>
