@@ -30,7 +30,7 @@ public class ShareFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         shareViewModel =
                 ViewModelProviders.of(this).get(ShareViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_share, container, false);
+        final View root = inflater.inflate(R.layout.fragment_share, container, false);
 //        final TextView textView = root.findViewById(R.id.text_schedule);
 //        shareViewModel.getText().observe(this, new Observer<String>() {
 //            @Override
@@ -38,13 +38,97 @@ public class ShareFragment extends Fragment {
 //                textView.setText(s);
 //            }
 //        });
-        ImageButton button =  root.findViewById(R.id.tuesday_edit);
-        button.setOnClickListener(new View.OnClickListener() {
+        makeFakeData(root);
+        ImageButton button0 =  root.findViewById(R.id.monday_edit);
+        button0.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), Pop.class));
+                Intent i = new Intent(getActivity(), Pop.class);
+                TextView tv = root.findViewById(R.id.monday_schedule);
+                i.putExtra("buttonPressed","Monday\n"+tv.getText());
+                startActivity(i);
+            }
+        });ImageButton button1 =  root.findViewById(R.id.tuesday_edit);
+        button1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), Pop.class);
+                TextView tv = root.findViewById(R.id.tuesday_schedule);
+                i.putExtra("buttonPressed","Tuesday\n"+tv.getText());
+                startActivity(i);
+            }
+        });ImageButton button2 =  root.findViewById(R.id.wednesday_edit);
+        button2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), Pop.class);
+                TextView tv = root.findViewById(R.id.wednesday_schedule);
+                i.putExtra("buttonPressed","Wednesday\n"+tv.getText());
+                startActivity(i);
+            }
+        });ImageButton button3 =  root.findViewById(R.id.thursday_edit);
+        button3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), Pop.class);
+                TextView tv = root.findViewById(R.id.thursday_schedule);
+                i.putExtra("buttonPressed","Thursday\n"+tv.getText());
+                startActivity(i);
+            }
+        });ImageButton button4 =  root.findViewById(R.id.friday_edit);
+        button4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), Pop.class);
+                TextView tv = root.findViewById(R.id.friday_schedule);
+                i.putExtra("buttonPressed","Friday\n"+tv.getText());
+                startActivity(i);
+            }
+        });ImageButton button5 =  root.findViewById(R.id.saturday_edit);
+        button5.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), Pop.class);
+                TextView tv = root.findViewById(R.id.saturday_schedule);
+                i.putExtra("buttonPressed","Saturday\n"+tv.getText());
+                startActivity(i);
+            }
+        });ImageButton button6 =  root.findViewById(R.id.sunday_edit);
+        button6.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), Pop.class);
+                TextView tv = root.findViewById(R.id.sunday_schedule);
+                i.putExtra("buttonPressed","Sunday\n"+tv.getText());
+                startActivity(i);
             }
         });
-        makeFakeData(root);
+//        ImageButton button1 =  root.findViewById(R.id.tuesday_edit);
+//        button1.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                MainActivity.buttonPressed = 1;
+//                startActivity(new Intent(getActivity(), Pop.class));
+//            }
+//        });
+//        ImageButton button2 =  root.findViewById(R.id.wednesday_edit);
+//        button2.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                MainActivity.buttonPressed = 2;
+//                startActivity(new Intent(getActivity(), Pop.class));
+//            }
+//        });ImageButton button3 =  root.findViewById(R.id.thursday_edit);
+//        button3.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {MainActivity.buttonPressed = 3;
+//                startActivity(new Intent(getActivity(), Pop.class));    }
+//        });
+//        ImageButton button4 =  root.findViewById(R.id.friday_edit);
+//        button4.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {MainActivity.buttonPressed = 4;
+//                startActivity(new Intent(getActivity(), Pop.class));    }
+//        });
+//        ImageButton button5 =  root.findViewById(R.id.saturday_edit);
+//        button5.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {MainActivity.buttonPressed = 5;
+//                startActivity(new Intent(getActivity(), Pop.class));    }
+//        });
+//        ImageButton button6 =  root.findViewById(R.id.sunday_edit);
+//        button6.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {MainActivity.buttonPressed = 6;
+//                startActivity(new Intent(getActivity(), Pop.class));    }
+//        });
         return root;
     }
 

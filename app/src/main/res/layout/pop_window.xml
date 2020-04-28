@@ -1,22 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/justSomeText"
-        android:text="Hello World!           "/>
-    <ImageButton
+        android:text="Edit Schedule"
+        android:textSize="40dp"
+        android:id="@+id/Edit_Schedule"/>
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_edit"
-        android:layout_toRightOf="@id/justSomeText"
-        android:id="@+id/justSomeText_edit"/>
-    <ImageButton
+        android:text="Original plan:"
+        android:id="@+id/schedule_temp"
+        android:layout_below="@id/Edit_Schedule"/>
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/justSomeText_edit"
-        android:src="@drawable/ic_delete"/>
+        android:text="From:"
+        android:textSize="20dp"
+        android:layout_below="@id/schedule_temp"
+        android:id="@+id/from"/>
+    <fragment android:id="@+id/autocomplete_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+        tools:ignore="MissingConstraints"
+        android:layout_below="@id/from"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To:"
+        android:textSize="20dp"
+        android:layout_below="@id/autocomplete_fragment"
+        android:id="@+id/to"/>
+    <fragment android:id="@+id/autocomplete_fragment_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+        tools:ignore="MissingConstraints"
+        android:layout_below="@id/to"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time:"
+        android:layout_below="@id/autocomplete_fragment_2"
+        android:textSize="20dp"
+        android:id="@+id/time"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="12:00 pm"
+        android:layout_below="@id/time"
+        android:id="@+id/time_inp"/>
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hour_spinner"
+        android:layout_below="@id/time"
+        />
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/minute_spinner"
+        android:layout_below="@id/time"
+        android:layout_toRightOf="@id/hour_spinner"
+        />
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/am_pm_spinner"
+        android:layout_below="@id/time"
+        android:layout_toRightOf="@id/minute_spinner"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="Confirm"
+        android:id="@+id/confirmButton"
+        />
+
 </RelativeLayout>
